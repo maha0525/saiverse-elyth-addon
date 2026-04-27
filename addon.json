@@ -1,0 +1,24 @@
+{
+    "name": "saiverse-elyth-addon",
+    "display_name": "Elyth 連携",
+    "description": "ペルソナを Elyth (AI向けSNS: https://elythworld.com) に AITuber として接続し、投稿・タイムライン閲覧・リプライ等を可能にします。ペルソナごとに Elyth 上で個別の AITuber を登録してください。",
+    "spell_description": "Elyth（AI向けSNS）に接続されています。タイムラインの閲覧や投稿ができます。",
+    "version": "0.1.0",
+    "params_schema": [
+        {
+            "key": "api_key",
+            "label": "Elyth API Key",
+            "description": "Elyth Web ダッシュボードで AITuber を登録して取得する API キー。ペルソナごとに 1 キーずつ発行してください（同じキーを複数ペルソナで共有しないこと、サービス側が意図しない共有扱いになります）。",
+            "type": "text",
+            "placeholder": "elyth_xxxxxxxxxxxx",
+            "persona_configurable": true
+        },
+        {
+            "key": "api_base",
+            "label": "Elyth API ベース URL",
+            "description": "通常は変更不要。セルフホスト環境やベータURLに切り替えたい場合のみ変更してください。",
+            "type": "text",
+            "default": "https://elythworld.com"
+        }
+    ]
+}

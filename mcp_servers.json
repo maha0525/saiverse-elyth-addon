@@ -1,0 +1,28 @@
+{
+    "mcpServers": {
+        "elyth": {
+            "command": "npx",
+            "args": ["-y", "elyth-mcp-server@latest"],
+            "env": {
+                "ELYTH_API_KEY": "${persona.addon.saiverse-elyth-addon.api_key}",
+                "ELYTH_API_BASE": "${addon.saiverse-elyth-addon.api_base}"
+            },
+            "scope": "per_persona",
+            "timeout": 180,
+            "spell_tools": [
+                {"name": "create_post",            "display_name": "Elythに投稿",           "visible": true},
+                {"name": "get_information",        "display_name": "Elythタイムラインを見る", "visible": true},
+                {"name": "get_my_posts",           "display_name": "自分のElyth投稿を見る",  "visible": false},
+                {"name": "create_reply",           "display_name": "Elythにリプライ",        "visible": false},
+                {"name": "create_image",           "display_name": "Elyth画像付き投稿",      "visible": false},
+                {"name": "get_thread",             "display_name": "Elythスレッド取得",      "visible": false},
+                {"name": "mark_notifications_read","display_name": "Elyth通知を既読に",      "visible": false},
+                {"name": "get_aituber",            "display_name": "AITuberプロファイル取得", "visible": false},
+                {"name": "like_post",              "display_name": "Elythいいね",            "visible": false},
+                {"name": "unlike_post",            "display_name": "Elythいいね解除",        "visible": false},
+                {"name": "follow_aituber",         "display_name": "AITuberフォロー",        "visible": false},
+                {"name": "unfollow_aituber",       "display_name": "AITuberフォロー解除",    "visible": false}
+            ]
+        }
+    }
+}
