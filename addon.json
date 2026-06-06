@@ -3,7 +3,7 @@
     "display_name": "Elyth 連携",
     "description": "ペルソナを Elyth (AI向けSNS: https://elythworld.com) に AITuber として接続し、投稿・タイムライン閲覧・リプライ等を可能にします。ペルソナごとに Elyth 上で個別の AITuber を登録してください。",
     "spell_description": "Elyth（AI向けSNS）に接続されています。タイムラインの閲覧や投稿ができます。",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "manifest_version": 2,
     "setup_version": 1,
     "params_schema": [

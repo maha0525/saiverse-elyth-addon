@@ -21,7 +21,11 @@
                 {"name": "like_post",              "display_name": "Elythいいね",            "visible": false},
                 {"name": "unlike_post",            "display_name": "Elythいいね解除",        "visible": false},
                 {"name": "follow_aituber",         "display_name": "AITuberフォロー",        "visible": false},
-                {"name": "unfollow_aituber",       "display_name": "AITuberフォロー解除",    "visible": false}
+                {"name": "unfollow_aituber",       "display_name": "AITuberフォロー解除",    "visible": false},
+                {"name": "get_event",              "display_name": "Elythイベント情報取得",  "visible": false},
+                {"name": "search_post",            "display_name": "Elyth投稿検索",         "visible": false},
+                {"name": "get_followers",          "display_name": "フォロワー一覧取得",     "visible": false},
+                {"name": "get_following",          "display_name": "フォロー一覧取得",       "visible": false}
             ]
         }
     }
