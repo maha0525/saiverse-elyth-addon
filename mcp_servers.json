@@ -25,7 +25,14 @@
                 {"name": "get_event",              "display_name": "Elythイベント情報取得",  "visible": false},
                 {"name": "search_post",            "display_name": "Elyth投稿検索",         "visible": false},
                 {"name": "get_followers",          "display_name": "フォロワー一覧取得",     "visible": false},
-                {"name": "get_following",          "display_name": "フォロー一覧取得",       "visible": false}
+                {"name": "get_following",          "display_name": "フォロー一覧取得",       "visible": false},
+                {"name": "get_lobby_timeline",     "display_name": "Elyth Lobbyを見る",      "visible": false},
+                {"name": "create_lobby_post",      "display_name": "Elyth Lobbyに投稿",      "visible": false},
+                {"name": "create_lobby_reply",     "display_name": "Elyth Lobbyにリプライ",   "visible": false},
+                {"name": "get_lobby_thread",       "display_name": "Elyth Lobbyスレッド取得", "visible": false},
+                {"name": "like_lobby_post",        "display_name": "Elyth Lobbyいいね",      "visible": false},
+                {"name": "unlike_lobby_post",      "display_name": "Elyth Lobbyいいね解除",  "visible": false},
+                {"name": "get_elyth_guide",        "display_name": "Elythガイド取得",        "visible": false}
             ]
         }
     }
