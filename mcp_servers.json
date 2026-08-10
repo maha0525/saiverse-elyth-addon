@@ -1,38 +1,42 @@
 {
+    "_comment": "Elyth Remote MCP 接続設定。2026-08-31 に Local MCP (npx elyth-mcp-server) と API v1 が終了したため、Bearer ヘッダー付きの Remote MCP へ移行済み。接続先は https://elythworld.com/api/mcp/remote。",
+    "_comment_spell_tools_default": "Elyth はツールの入れ替えが速い (v1 の 23 個 → v2 の 25 個で Lobby 系 7 個が消え DM/Field/GLYPH 系 9 個が増えた)。spell_tools_default を宣言することで、今後 Elyth 側が増やしたツールは JSON を編集しなくてもペルソナから呼べるようになる。visible=false なので head (system prompt) は太らず、ペルソナは addon_spell_help で発見できる。危険なツールが増えうるサービスではこのキーを書かないこと — 書くか書かないかが唯一の関所。",
     "mcpServers": {
         "elyth": {
-            "command": "npx",
-            "args": ["-y", "elyth-mcp-server@latest"],
-            "env": {
-                "ELYTH_API_KEY": "${persona.addon.saiverse-elyth-addon.api_key}",
-                "ELYTH_API_BASE": "${addon.saiverse-elyth-addon.api_base}"
+            "url": "${addon.saiverse-elyth-addon.mcp_url}",
+            "transport": "streamable_http",
+            "headers": {
+                "Authorization": "Bearer ${persona.addon.saiverse-elyth-addon.api_key}"
             },
             "scope": "per_persona",
             "timeout": 180,
+            "spell_tools_default": {"spell": true, "visible": false},
             "spell_tools": [
-                {"name": "create_post",            "display_name": "Elythに投稿",           "visible": true},
-                {"name": "get_information",        "display_name": "Elythタイムラインを見る", "visible": true},
-                {"name": "get_my_posts",           "display_name": "自分のElyth投稿を見る",  "visible": false},
-                {"name": "create_reply",           "display_name": "Elythにリプライ",        "visible": false},
-                {"name": "create_image",           "display_name": "Elyth画像付き投稿",      "visible": false},
-                {"name": "get_thread",             "display_name": "Elythスレッド取得",      "visible": false},
-                {"name": "mark_notifications_read","display_name": "Elyth通知を既読に",      "visible": false},
-                {"name": "get_aituber",            "display_name": "AITuberプロファイル取得", "visible": false},
-                {"name": "like_post",              "display_name": "Elythいいね",            "visible": false},
-                {"name": "unlike_post",            "display_name": "Elythいいね解除",        "visible": false},
-                {"name": "follow_aituber",         "display_name": "AITuberフォロー",        "visible": false},
-                {"name": "unfollow_aituber",       "display_name": "AITuberフォロー解除",    "visible": false},
-                {"name": "get_event",              "display_name": "Elythイベント情報取得",  "visible": false},
-                {"name": "search_post",            "display_name": "Elyth投稿検索",         "visible": false},
-                {"name": "get_followers",          "display_name": "フォロワー一覧取得",     "visible": false},
-                {"name": "get_following",          "display_name": "フォロー一覧取得",       "visible": false},
-                {"name": "get_lobby_timeline",     "display_name": "Elyth Lobbyを見る",      "visible": false},
-                {"name": "create_lobby_post",      "display_name": "Elyth Lobbyに投稿",      "visible": false},
-                {"name": "create_lobby_reply",     "display_name": "Elyth Lobbyにリプライ",   "visible": false},
-                {"name": "get_lobby_thread",       "display_name": "Elyth Lobbyスレッド取得", "visible": false},
-                {"name": "like_lobby_post",        "display_name": "Elyth Lobbyいいね",      "visible": false},
-                {"name": "unlike_lobby_post",      "display_name": "Elyth Lobbyいいね解除",  "visible": false},
-                {"name": "get_elyth_guide",        "display_name": "Elythガイド取得",        "visible": false}
+                {"name": "create_post",            "display_name": "Elythに投稿",              "visible": true},
+                {"name": "get_information",        "display_name": "Elythタイムラインを見る",   "visible": true},
+                {"name": "get_event",              "display_name": "Elythイベント情報取得",     "visible": false},
+                {"name": "get_aituber",            "display_name": "AITuberプロファイル取得",   "visible": false},
+                {"name": "get_my_posts",           "display_name": "自分のElyth投稿を見る",     "visible": false},
+                {"name": "get_thread",             "display_name": "Elythスレッド取得",        "visible": false},
+                {"name": "search_post",            "display_name": "Elyth投稿検索",            "visible": false},
+                {"name": "get_followers",          "display_name": "フォロワー一覧取得",        "visible": false},
+                {"name": "get_following",          "display_name": "フォロー一覧取得",          "visible": false},
+                {"name": "get_notifications",      "display_name": "Elythの通知を見る",         "visible": false},
+                {"name": "list_dm_threads",        "display_name": "ElythのDM一覧",            "visible": false},
+                {"name": "get_dm_thread",          "display_name": "ElythのDMを読む",          "visible": false},
+                {"name": "get_glyph_balance",      "display_name": "GLYPH残高を見る",          "visible": false},
+                {"name": "get_field_context",      "display_name": "Fieldの現在地と行動を見る", "visible": false},
+                {"name": "get_available_motions",  "display_name": "Fieldのモーション一覧",     "visible": false},
+                {"name": "create_image",           "display_name": "Elyth画像付き投稿",        "visible": false},
+                {"name": "create_reply",           "display_name": "Elythにリプライ",          "visible": false},
+                {"name": "like_post",              "display_name": "Elythいいね",              "visible": false},
+                {"name": "unlike_post",            "display_name": "Elythいいね解除",          "visible": false},
+                {"name": "follow_aituber",         "display_name": "AITuberフォロー",          "visible": false},
+                {"name": "unfollow_aituber",       "display_name": "AITuberフォロー解除",      "visible": false},
+                {"name": "reply_dm",               "display_name": "ElythのDMに返信",          "visible": false},
+                {"name": "mark_notifications_read","display_name": "Elyth通知を既読に",        "visible": false},
+                {"name": "perform_field_action",   "display_name": "Fieldで移動・着席する",     "visible": false},
+                {"name": "perform_motion",         "display_name": "Fieldでモーション再生",     "visible": false}
             ]
         }
     }
